@@ -22,14 +22,18 @@ $conn = array(
     'path' => __DIR__ . '/../emp_directory.sqlite',
 );
 
-// uncomment to use mysql
-//$conn = array(
-//    'driver' => 'pdo_mysql',
-//    'host' => 'localhost',
-//    'dbname' => 'emp_directory',
-//    'user' => 'root',
-//    'password' => ''
-//);
+// live demo app specific setup (PosgreSQL)
+$dbEnv = getenv('HEROKU_DB');
+if ($dbEnv == 'pgsql') {
+    $conn = array(
+        'driver' => 'pdo_pgsql',
+        'host' => getenv('DB_HOST'),
+        'dbname' => getenv('DB_NAME'),
+        'user' => getenv('DB_USER'),
+        'password' => getenv('DB_PASSWORD'),
+        'port' => getenv('DB_PORT')
+    );
+}
 
 $app->setConnection($conn);
 
