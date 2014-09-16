@@ -36,7 +36,7 @@ Additionally, the application also features a CRUD implementation to add,edit an
 
 ## EmpDirectory server
 
-The server implementation uses [breeze.server.php](github.com/adrotec/breeze.server.php), a library to create breeze compatible servers in PHP with Doctrine 2 ORM.
+The server implementation uses [breeze.server.php](https://github.com/adrotec/breeze.server.php), a library to create breeze compatible servers in PHP with Doctrine 2 ORM.
 
 ![Class Diagram](diagrams/class-diagram.png)
 
@@ -88,9 +88,9 @@ There are three varieties of the same application to prove the fact that `breeze
 
 - A MySql dump is available in `server/mysql-dump.sql` file.
 - Create a database, import the dump file and, change the database configuration in:  
-  - standalone - `bootstrap.php`  
-  - symfony - app/config/parameters.yml  
-  - laravel - app/config/database.php
+  - standalone - `bootstrap.php`
+  - symfony - `app/config/parameters.yml`
+  - laravel - `app/config/database.php`
 
 ### Client
 
