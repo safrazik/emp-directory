@@ -1,0 +1,22 @@
+<div class="employee-list list-group" data-bind="foreach: {data: allEmployees, as: 'employee'}">
+  <a class="list-group-item" href="#" data-bind="attr: {href: '#employees/' + employee.id()}">
+    <div class="thumbnail">
+      <img alt="" data-bind="attr: {src: employee.profilePicThumbUrl()}">
+    </div>
+    <div class="">
+      <h4 class="list-group-item-heading" data-bind="text: employee.fullName()"></h4>
+      <p class="list-group-item-text" data-bind="text: employee.job() && employee.job().title()"></p>
+    </div>
+  </a>
+<!--  <a class="list-group-item" href="http://localhost/adrotec/emp_profile/index.php/E006">
+    <div class="thumbnail">
+      <img alt="Saman Amal" src="images/demo/E006.jpg">
+    </div>
+    <div class="">
+      <h4 class="list-group-item-heading">Saman Amal</h4>
+      <p class="list-group-item-text">
+        Driver
+      </p>
+    </div>
+  </a>-->
+</div>

@@ -1,0 +1,2 @@
+# prevent direct access to src
+deny from all

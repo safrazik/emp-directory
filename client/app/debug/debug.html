@@ -1,0 +1,31 @@
+<div class="content">
+
+    <h3>Changed Entities</h3>
+    <div>
+        <div>
+        <p>
+            The table below shows all the entities in the EntityManager that have changes.  
+            Entities added, deleted, or modified will appear in this table.  The "Save" button on this page will cause all the entities
+            to be saved to the server.  The "Reset" button will cause all the changes to be discarded.
+        </p>
+        <p>
+            This table is not something you would find in a real app.  It is provided as a way to visualize the EntityManager cache
+            and a demonstration of the <a href="http://www.breezejs.com/sites/all/apidocs/index.html">Breeze API</a>.
+        </p>
+        <p>
+            This application uses a single EntityManager, so all changes occur in a single cache.  Some applications may require 
+            <a href="http://www.breezejs.com/documentation/multiple-managers">multiple EntityManagers</a>, 
+            so individual change sets (or Units of Work) can be managed independently.  For an example of this, see the 
+            <a href="http://www.breezejs.com/samples/temphire-sample">TempHire</a> sample application.
+        </p>
+
+        </div>
+
+        <div data-bind="widget: {kind: 'changedEntities', changedEntities: changedEntities}"></div>
+
+        <div class="well text-right" data-bind="visible: changedEntities().length">
+            <button class="btn btn-default" data-bind="click: reset">Reset All</button>
+            <button class="btn btn-primary" data-bind="click: update">Save All</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<section>
+  <div  style="position: absolute; z-index: 2; padding: 10px 20px; height: 50px; background: #FFF; width: 100%;">
+    <ul class="nav nav-tabs" data-bind="foreach: router.navigationModel">
+      <li data-bind="css: {'active': isActive}">
+        <a data-bind="text: title, attr: { href: hash }">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div style="position: absolute; top: 50px; bottom: 0; left: 0; right: 0;" data-bind="router: { transition:'entrance' }"></div>
+</section>

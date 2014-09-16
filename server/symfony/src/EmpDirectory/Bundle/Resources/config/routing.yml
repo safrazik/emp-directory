@@ -1,0 +1,3 @@
+emp_directory_api:
+    path:       /api/{resource}
+    defaults:   { _controller: EmpDirectoryBundle:Api:api }

@@ -1,0 +1,19 @@
+EmpDirectory\Bundle\Entity\Employee:
+    constraints:
+        - Callback: [customValidation]
+    properties:
+        firstName:
+            - NotBlank: ~
+        lastName:
+            - NotBlank: ~
+        dateOfBirth:
+            - Date: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        cellPhone:
+            - Regex: "/^\+?\d+(-\d+)*$/"
+        officePhone:
+            - Regex: "/^\+?\d+(-\d+)*$/"
+        website:
+            - Url: ~

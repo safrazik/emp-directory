@@ -1,0 +1,52 @@
+<div class="alert alert-info" data-bind="visible: !changedEntities().length">No changed entities, EntityManager is clean! (he took a bath, I guess)</div>
+
+<table class="table table-bordered">
+    <tbody data-bind="foreach: {data: changedEntities, as: 'e'}">
+        <tr data-bind="attr: {'class': e.entityAspect.entityState.name}">
+            <th>
+                <span data-bind="text: e.entityType.shortName"></span>
+                (<span data-bind="text: e.entityAspect.getKey().values"></span>)
+                <br>
+                <span class="entityState" data-bind="text: e.entityAspect.entityState.name"></span>
+            </th>
+            <td>
+                <table class="table table-small">
+                    <thead>
+                        <th>Property Name</th>
+                        <th>Original Value</th>
+                        <th>Current Value</th>
+                        <th>Validation Errors</th>
+                    </thead>
+                    <tbody data-bind="foreach: {data: Object.keys(e.entityAspect.originalValues), as: 'k'}">
+                        <tr>
+                            <td data-bind="text: k"></td>
+                            <!-- <td data-bind="text: e.entityAspect.originalValues[k]"></td> -->
+                            <td>
+                                <div data-bind="if: k == 'profilePicContent'">
+                                    <img style="max-height: 75px;" data-bind="attr: {src: e.entityAspect.originalValues[k]}">
+                                </div>
+                                <div data-bind="ifnot: k == 'profilePicContent'">
+                                    <span data-bind="text: e.entityAspect.originalValues[k]"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div data-bind="if: k == 'profilePicContent'">
+                                    <img style="max-height: 75px;" data-bind="attr: {src: e[k]}">
+                                </div>
+                                <div data-bind="ifnot: k == 'profilePicContent'">
+                                    <span data-bind="text: e[k]"></span>
+                                </div>
+                            </td>
+                            <td data-bind="foreach: {data: e.entityAspect.getValidationErrors(k), as: 'r'}">
+                                <div class="text-danger" style="border-bottom: 1px solid #DDD;">
+                                    <small class="label label-default pull-right" style="margin-top: 2px;" data-bind="text: r.isServerError ? 'SERVER ERROR' : 'CLIENT ERROR'"></small>
+                                    <span data-bind="text: r.errorMessage"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

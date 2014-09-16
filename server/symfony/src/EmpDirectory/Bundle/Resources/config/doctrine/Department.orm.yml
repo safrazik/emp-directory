@@ -1,0 +1,23 @@
+EmpDirectory\Bundle\Entity\Department:
+    type: entity
+    table: departments
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+        description:
+            type: text
+    oneToMany:
+        employees:
+            targetEntity: Employee
+            cascade: {  }
+            mappedBy: department
+            inversedBy: null
+            orphanRemoval: false
+            orderBy: null
+    lifecycleCallbacks: {  }

@@ -1,0 +1,44 @@
+<div class="header navbar navbar-default navbar-fixed-top">
+  <section>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <button class="btn btn-lg btn-default nav-back-btn nav-action-btn" data-bind="click: router.navigateBack">
+          <i class="fa fa-arrow-left" data-bind="css: {'fa-spinner fa-spin': router.isNavigating}"></i>
+          <!--<i class="glyphicon glyphicon-chevron-left"></i>-->
+          <!--<img src="images/arrow-left.png">-->
+        </button>
+        
+        <span data-bind="foreach: router.navigationModel">
+          <a class="btn-nav-icon" data-bind="attr: { href: hash, title: title }, css: { active: isActive }">
+            <i class="fa" data-bind="attr: {'class': 'fa fa-' + icon}"></i>
+          </a>
+        </span>
+
+      </div>
+      <div class="col-md-6">
+        <div class="text-center">
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="main-search-form">
+          <!--<input type="text" class="form-control" placeholder="Search...">-->
+
+          <form role="search" data-bind="submit:search">
+            <input type="text" class="form-control" placeholder="Search" 
+                   data-bind="value: filterText, valueUpdate: 'keyup', event: {keyup: search}">
+            <button type="submit" class="btn btn-lg btn-default nav-search-btn nav-action-btn">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </form>
+
+          <div class="main-search-results">
+            <div data-bind="widget: {kind: 'employeeView', employees: employees}"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page-host" data-bind="router: { transition:'entrance' }"></div>

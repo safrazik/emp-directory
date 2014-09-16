@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EmpDirectory\Model\Employee" table="employees">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="firstName" type="string" column="first_name"/>
+    <field name="lastName" type="string" column="last_name"/>
+    <field name="dateOfBirth" type="date" column="date_of_birth"/>
+    <field name="email" type="string" column="email"/>
+    <field name="officePhone" type="string" column="office_phone"/>
+    <field name="cellPhone" type="string" column="cell_phone"/>
+    <field name="bio" type="text" column="bio"/>
+    <field name="website" type="string" column="website"/>
+    <field name="twitter" type="string" column="twitter"/>
+    <field name="profilePic" type="string" column="profile_pic"/>
+    <many-to-one field="department" target-entity="Department" inversed-by="employees">
+      <join-columns>
+        <join-column name="department_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="job" target-entity="Job">
+      <join-columns>
+        <join-column name="job_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="manager" target-entity="Employee" inversed-by="directReports">
+      <join-columns>
+        <join-column name="manager_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <one-to-many field="directReports" target-entity="Employee" mapped-by="manager"/>
+
+    <lifecycle-callbacks>
+        <lifecycle-callback type="prePersist" method="saveProfilePic"/>
+        <lifecycle-callback type="preUpdate" method="saveProfilePic"/>
+    </lifecycle-callbacks>
+  </entity>
+</doctrine-mapping>

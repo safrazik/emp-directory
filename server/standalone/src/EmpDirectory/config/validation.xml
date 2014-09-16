@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+    
+    <class name="EmpDirectory\Model\Employee">
+        <constraint name="Callback">customValidation</constraint>
+        <property name="firstName">
+            <constraint name="NotBlank"></constraint>
+        </property>
+        <property name="lastName">
+            <constraint name="NotBlank"></constraint>
+        </property>
+        <property name="dateOfBirth">
+            <constraint name="Date" />
+        </property>
+        <property name="email">
+            <constraint name="NotBlank"></constraint>
+            <constraint name="Email"></constraint>
+        </property>
+        <property name="cellPhone">
+            <constraint name="Regex">
+                <!-- @TODO create a validation constraint and support breeze's "phone" validator -->
+                <option name="pattern">/^\+?\d+(-\d+)*$/</option>
+            </constraint>
+        </property>
+        <property name="officePhone">
+            <constraint name="Regex">
+                <option name="pattern">/^\+?\d+(-\d+)*$/</option>
+            </constraint>
+        </property>
+        <property name="website">
+            <constraint name="Url"></constraint>
+        </property>
+    </class>
+    
+</constraint-mapping>

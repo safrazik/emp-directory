@@ -1,0 +1,4 @@
+/client/bower_components/
+/server/standalone/vendor/
+/server/laravel/vendor/
+/server/symfony/vendor/

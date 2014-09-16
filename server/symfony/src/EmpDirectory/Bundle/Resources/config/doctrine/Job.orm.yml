@@ -1,0 +1,15 @@
+EmpDirectory\Bundle\Entity\Job:
+    type: entity
+    table: jobs
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+        description:
+            type: text
+    lifecycleCallbacks: {  }

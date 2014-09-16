@@ -1,0 +1,3 @@
+emp_directory:
+    resource: "@EmpDirectoryBundle/Resources/config/routing.yml"
+    prefix:   /

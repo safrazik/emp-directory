@@ -1,0 +1,106 @@
+<template id="employee_profile_pic">
+  <div class="thumbnail">
+    <img alt="" data-bind="attr: {src: employee().profilePicUrl()}">
+  </div>
+</template>
+<div class="content">
+  <div class="row">
+    <div class="col-center col-md-6 col-md-push-3">
+
+      <div class="visible-xs visible-sm employee-profile-pic-container">
+        <div class="employee-profile-pic">
+          <div data-bind="template: 'employee_profile_pic'"></div>
+<!--          <div class="thumbnail">
+            <img alt="" data-bind="attr: {src: 'images/demo/' + employee.id() + '.jpg'}">
+          </div>-->
+        </div>
+        <div class="vertical-space"></div>
+      </div>
+      <div class="page-header">
+        <a class="btn btn-default pull-right btn-icon-circle" data-bind="attr: {href: '#crud/' + employee().id()}">
+          <i class="fa fa-pencil"></i>
+        </a>
+        <h1 class="employee-name">
+          <span data-bind="text: employee().fullName()"></span>
+          <small data-bind="text: employee().job() && employee().job().title()"></small>
+        </h1>
+      </div>
+      <div class="employee-description">
+        <div><p data-bind="text: employee().bio()"></p></div>
+      </div>
+    </div>
+    <div class="col-left col-md-3 col-md-pull-6">
+      <div class="rowx">
+        <div class="hidden-xs hidden-sm">
+          <div class="employee-profile-pic">
+            <div data-bind="template: 'employee_profile_pic'"></div>
+          </div>
+        </div>
+        <div class="contact-info block">
+          <div class="vertical-space"></div>
+          <ul class="list-group contact-list">
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading">Office Phone</h4>
+              <p class="list-group-item-text">
+                <a data-bind="
+                  attr: {href: 'tel:' + employee().officePhone()}, 
+                  text: employee().officePhone()
+                "></a>
+              </p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading">Cell Phone</h4>
+              <p class="list-group-item-text">
+                <a data-bind="
+                  attr: {href: 'tel:' + employee().cellPhone()}, 
+                  text: employee().cellPhone()
+                "></a>
+              </p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading">Email</h4>
+              <p class="list-group-item-text">
+                <a data-bind="
+                  attr: {href: 'mailto:' + employee().email()}, 
+                  text: employee().email()"></a>
+              </p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading">Twitter</h4>
+              <p class="list-group-item-text">
+                <a data-bind="
+                  attr: {href: 'https://faketwitter.com/' + employee().twitter()}, 
+                  text: employee().twitter()"></a>
+              </p>
+            </li>
+         </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-right col-md-3">
+
+
+      <div data-bind="if: employee().manager">
+
+        <div class="manager-info block">
+          <div class="page-header">
+            <h2>Manager</h2>
+          </div>
+          <div data-bind="widget: {kind: 'employeeView', employee: employee().manager}"></div>
+        </div>
+
+      </div>
+
+      <div data-bind="if: employee().directReports().length">
+        <div class="direct-reports-list block">
+          <div class="page-header">
+            <h2>Direct Reports</h2>
+          </div>
+
+          <div data-bind="widget: {kind: 'employeeView', employees: employee().directReports}"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

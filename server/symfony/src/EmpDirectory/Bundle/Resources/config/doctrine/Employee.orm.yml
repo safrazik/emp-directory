@@ -1,0 +1,77 @@
+EmpDirectory\Bundle\Entity\Employee:
+    type: entity
+    table: employees
+    id:
+        id:
+            id: true
+            type: integer
+            generator:
+                strategy: IDENTITY
+    fields:
+        firstName:
+            type: string
+            column: first_name
+        lastName:
+            type: string
+            column: last_name
+        dateOfBirth:
+            type: date
+            column: date_of_birth
+        email:
+            type: string
+        officePhone:
+            type: string
+            column: office_phone
+        cellPhone:
+            type: string
+            column: cell_phone
+        bio:
+            type: text
+        website:
+            type: string
+        twitter:
+            type: string
+        profilePic:
+            type: string
+            column: profile_pic
+    oneToMany:
+        directReports:
+            targetEntity: Employee
+            cascade: {  }
+            mappedBy: manager
+            inversedBy: null
+            orphanRemoval: false
+            orderBy: null
+    manyToOne:
+        department:
+            targetEntity: Department
+            cascade: {  }
+            mappedBy: null
+            inversedBy: employees
+            joinColumns:
+                department_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        job:
+            targetEntity: Job
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                job_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        manager:
+            targetEntity: Employee
+            cascade: {  }
+            mappedBy: null
+            inversedBy: directReports
+            joinColumns:
+                manager_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks:
+        prePersist:
+            - saveProfilePic
+        preUpdate:
+            - saveProfilePic

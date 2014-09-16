@@ -1,0 +1,33 @@
+<div class="content">
+
+<h1><img src="images/logo.png" style="height: 50px; margin-top: -10px;">
+<strong>EmpDirectory</strong> sample application</h1>
+<h2>Introduction</h2>
+<p>EmpDirectory is a sample application for demonstrating the usage of <a href="http://www.breezejs.com" title="http://www.breezejs.com">Breeze Js</a> library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.</p>
+<h2>Features</h2>
+<h3>Breeze js features shown in the app</h3>
+<ul>
+<li>Handling navigation properties (associations) auto<strong>magic</strong>ally<ul>
+<li><strong>(Lookups)</strong> Employee's job and department are not fetched along with the employees, but queried separately when application loads and breeze take the responsibility to assign their department and job.</li>
+<li>If an employee's manager is already available in the cache, we don't have to query the server again to get him/her.</li>
+<li><strong>(Lazy loading)</strong> When there are any direct reports of employees available in the cache, list them, and fetch all the direct reports from server, since we don't know if all the direct reports of that employee are available in the cache</li>
+</ul>
+</li>
+<li><strong>(Unit of Work)</strong> Saving all the changes in a single transaction</li>
+<li><strong>(<a href="http://www.breezejs.com/documentation/extending-entities" title="http://www.breezejs.com/documentation/extending-entities">Extending Entities</a>)</strong> <code>fullName</code> is a computed property of <code>firstName + ' ' + lastName</code> which is made possible by MetadataStore's <code>registerEntityTypeCtor</code> method</li>
+<li>Client side and server side <a href="http://www.breezejs.com/documentation/validation" title="http://www.breezejs.com/documentation/validation">validations</a>. Enter "lorem" as firstName and try to save, to see an example of server side error.</li>
+<li>Showing the usage of date handling with <a href="http://momentjs.com" title="http://momentjs.com">momentjs</a> with <a href="https://github.com/adrotec/knockout-date-bindings" title="https://github.com/adrotec/knockout-date-bindings">knockout date bindings</a></li>
+<li>Demonstrating HTML5 image upload with breeze and <a href="https://github.com/adrotec/knockout-file-bindings" title="https://github.com/adrotec/knockout-file-bindings">knockout file bindings</a></li>
+<li>Demonstrates how a breeze CRUD implementation can be done with a Durandal widget</li>
+</ul>
+<h3>Conventions used</h3>
+<ul>
+<li><code>getXXX</code> methods of dataservice are synchronous and return the result(s) while <code>findXXX</code> methods are asynchronous and return a promise of result(s)</li>
+<li>view and viewmodel (of a durandal module) are grouped by the name of the module and named as the names of the module itself</li>
+</ul>
+  
+  <hr>
+  
+<div data-bind="compose: 'debug/debug'"></div>
+  
+</div>

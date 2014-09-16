@@ -1,0 +1,5 @@
+EmpDirectory\Bundle\Entity\Employee:
+    exclusion_policy: NONE
+    properties:
+        oldProfilePic:
+            exclude: true
