@@ -38,6 +38,8 @@ Additionally, the application also features a CRUD implementation to add,edit an
 
 The server implementation uses [breeze.server.php](github.com/adrotec/breeze.server.php), a library to create breeze compatible servers in PHP with Doctrine 2 ORM.
 
+![Class Diagram](diagrams/class-diagram.png)
+
 ### Features
 
 - Mappings in Annotations, YAML or XML
