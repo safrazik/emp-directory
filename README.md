@@ -1,5 +1,6 @@
-# <img alt="" src="client/images/logo.png" style="height: 50px; margin-top: -10px;"> **EmpDirectory** sample application
+![LOGO](client/images/logo-small.png)
 
+# **EmpDirectory** sample application
 
 ## <a href="client/" class="btn btn-primary btn-lg">LIVE DEMO</a>
 
