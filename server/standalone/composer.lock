@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6ab9adf44dd0efcfd81fbea526b1ac75",
+    "hash": "4da3f2f248a87aabb5e3130ace017cbf",
     "packages": [
         {
             "name": "adrotec/breeze.server.php",
@@ -12,20 +12,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adrotec/breeze.server.php.git",
-                "reference": "127df5574cdbd80e673fa9d23d84a1ed8c12a375"
+                "reference": "b74e232dc2b57aa1cc350f42a2273037d6970e07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adrotec/breeze.server.php/zipball/127df5574cdbd80e673fa9d23d84a1ed8c12a375",
-                "reference": "127df5574cdbd80e673fa9d23d84a1ed8c12a375",
+                "url": "https://api.github.com/repos/adrotec/breeze.server.php/zipball/b74e232dc2b57aa1cc350f42a2273037d6970e07",
+                "reference": "b74e232dc2b57aa1cc350f42a2273037d6970e07",
                 "shasum": ""
             },
             "require": {
                 "adrotec/odataphpprod": "1.0.*",
                 "doctrine/orm": ">=2.4",
                 "jms/serializer": "~0.13",
-                "php": ">=5.3.2",
-                "symfony/validator": "dev-master"
+                "php": ">=5.3.2"
+            },
+            "suggest": {
+                "symfony/validator": "Enable Validation"
             },
             "type": "library",
             "autoload": {
@@ -51,7 +53,7 @@
                 "odata",
                 "rest"
             ],
-            "time": "2014-09-15 20:51:59"
+            "time": "2014-09-16 06:57:05"
         },
         {
             "name": "adrotec/odataphpprod",

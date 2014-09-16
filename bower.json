@@ -1,0 +1,29 @@
+{
+  "name": "EmpDirectory client",
+  "version": "0.1.0",
+  "description": "A demonstration of Breeze JS features",
+  "authors": [
+    "Muhammad Safraz Razik"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "durandal": "~2.1.0",
+    "bootstrap": "~3.2.0",
+    "q": "1.0.1",
+    "breezejs": "~1.5.0",
+    "toastr": "~2.0.3",
+    "fastclick": "~1.0.3",
+    "moment": "~2.8.3",
+    "knockout-date-bindings": "adrotec/knockout-date-bindings",
+    "knockout-file-bindings": "adrotec/knockout-file-bindings",
+    "font-awesome": "~4.2.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "PATH=`pwd`/vendor/node/bin:$PATH ./node_modules/bower/bin/bower install"
+    ],
+    "post-update-cmd": [
+      "PATH=`pwd`/vendor/node/bin:$PATH ./node_modules/bower/bin/bower install"
+    ]
+  }
+}

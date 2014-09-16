@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "32d13ff4c2ceb356780c745651196b2c",
+    "hash": "7f5d66cc86059473a3f2525b9cd9a954",
     "packages": [
         {
             "name": "adrotec/breeze.server.php",

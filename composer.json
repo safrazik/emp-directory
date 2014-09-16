@@ -22,7 +22,7 @@
 
     },
     "autoload": {
-        "psr-0": {"": "src/"}
+        "psr-0": {"EmpDirectory": "server/standalone/src/"}
     },
     "config": {
         "vendor-dir": "server/standalone/vendor"

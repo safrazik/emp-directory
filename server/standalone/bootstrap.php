@@ -1,12 +1,12 @@
 <?php
 
 // prevent direct access
-if(strpos($_SERVER['PHP_SELF'], 'bootstrap.php') !== false){
+if (strpos($_SERVER['PHP_SELF'], 'bootstrap.php') !== false) {
     header('HTTP/1.0 404 Not Found');
     exit();
 }
 
-$loader = require __DIR__.'/vendor/autoload.php';
+$loader = require __DIR__ . '/vendor/autoload.php';
 
 $app = new Adrotec\BreezeJs\Framework\StandaloneApplication();
 
@@ -17,13 +17,21 @@ $app->setAutoloader($loader);
 // uncomment to use annotations
 //$app->enableAnnotations();
 
-$app->setConnection(array(
-    'driver' => 'pdo_mysql',
-    'host' => 'localhost',
-    'dbname' => 'tmp1',
-    'user' => 'root',
-    'password' => ''
-));
+$conn = array(
+    'driver' => 'pdo_sqlite',
+    'path' => __DIR__ . '/../emp_directory.sqlite',
+);
+
+// uncomment to use mysql
+//$conn = array(
+//    'driver' => 'pdo_mysql',
+//    'host' => 'localhost',
+//    'dbname' => 'emp_directory',
+//    'user' => 'root',
+//    'password' => ''
+//);
+
+$app->setConnection($conn);
 
 // using xml mappings
 $app->addMapping(array(
