@@ -21,7 +21,6 @@ define(['plugins/router', 'durandal/app', 'knockout', 'dataservice', 'jquery'],
             {route: '', title: 'Home', icon: 'home', moduleId: 'welcome/welcome', nav: true},
             {route: 'employees', title: 'Employees', icon: 'user', hasChildRoutes: true, moduleId: 'employees/employees', nav: true},
             {route: 'crud', title: 'CRUD', icon: 'pencil', hasChildRoutes: true, moduleId: 'crud/crud', nav: true},
-            {route: 'debug', title: 'Debug', icon: 'exclamation-circle', hasChildRoutes: true, moduleId: 'debug/debug', nav: true},
           ]).buildNavigationModel();
           return router.activate();
       }
