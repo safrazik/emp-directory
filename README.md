@@ -2,11 +2,17 @@
 
 # **EmpDirectory** sample application
 
-## <a href="client/" class="btn btn-primary btn-lg">LIVE DEMO</a>
+## [LIVE DEMO](http://emp-directory.herokuapp.com/client/)
 
 ## Introduction
 
 EmpDirectory is a sample application for demonstrating the usage of [Breeze JS](http://www.breezejs.com) library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.
+
+Inspired by the sample applications of [Christophe Coenraets](http://coenraets.org/blog/).
+
+The application is an Employee Directory that allows you to look for employees by name, view the details of an employee, and navigate up and down the Organization Chart by clicking the employee’s manager or any of his/her direct reports.
+
+Additionally, the application also features a CRUD implementation to add,edit and delete employees, departments or job titles.
 
 ## EmpDirectory Client
 
