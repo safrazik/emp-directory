@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="client/bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container">
+  
+<h1><img alt="" src="client/images/logo.png" style="height: 50px; margin-top: -10px;"> <strong>EmpDirectory</strong> sample application</h1>
+  
+<h2><a class="btn btn-primary btn-lg" href="client/">LIVE DEMO</a></h2>
+  
+<h2>Introduction</h2>
+<p>EmpDirectory is a sample application for demonstrating the usage of <a href="http://www.breezejs.com" title="http://www.breezejs.com">Breeze JS</a> library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.</p>
+<h2>EmpDirectory Client</h2>
+<h3>Features</h3>
+<ul>
+<li>Handling navigation properties (associations) auto<strong>magic</strong>ally<ul>
+<li><strong>(Lookups)</strong> Employee's job and department are not fetched along with the employees, but queried separately when application loads and breeze take the responsibility to assign their department and job.</li>
+<li>If an employee's manager is already available in the cache, we don't have to query the server again to get him/her.</li>
+<li><strong>(Lazy loading)</strong> When there are any direct reports of employees available in the cache, list them, and fetch all the direct reports from server, since we don't know if all the direct reports of that employee are available in the cache</li>
+</ul>
+</li>
+<li><strong>(Unit of Work)</strong> Saving all the changes in a single transaction</li>
+<li><strong>(<a href="http://www.breezejs.com/documentation/extending-entities" title="http://www.breezejs.com/documentation/extending-entities">Extending Entities</a>)</strong> <code>fullName</code> is a computed property of <code>firstName + ' ' + lastName</code> which is made possible by MetadataStore's <code>registerEntityTypeCtor</code> method</li>
+<li>Client side and server side <a href="http://www.breezejs.com/documentation/validation" title="http://www.breezejs.com/documentation/validation">validations</a>. Enter "lorem" as firstName and try to save, to see an example of server side error.</li>
+<li>Showing the usage of date handling with <a href="http://momentjs.com" title="http://momentjs.com">momentjs</a> with <a href="https://github.com/adrotec/knockout-date-bindings" title="https://github.com/adrotec/knockout-date-bindings">knockout date bindings</a></li>
+<li>Demonstrating HTML5 image upload with breeze and <a href="https://github.com/adrotec/knockout-file-bindings" title="https://github.com/adrotec/knockout-file-bindings">knockout file bindings</a></li>
+<li>Demonstrates how a breeze CRUD implementation can be done with a Durandal widget</li>
+</ul>
+<h3>Conventions used</h3>
+<ul>
+<li><code>getXXX</code> methods of dataservice are synchronous and return the result(s) while <code>findXXX</code> methods are asynchronous and return a promise of result(s)</li>
+<li>view and viewmodel (of a durandal module) are grouped by the name of the module and named as the names of the module itself</li>
+</ul>
+<h2>EmpDirectory server</h2>
+<p>The server implementation uses <a href="github.com/adrotec/breeze.server.php" title="github.com/adrotec/breeze.server.php">breeze.server.php</a>, a library to create breeze compatible servers in PHP with Doctrine 2 ORM.</p>
+<h3>Features</h3>
+<ul>
+<li>Mappings in Annotations, YAML or XML</li>
+<li>Demonstrating Doctrine life cycle callbacks: <code>Employee::saveProfilePic()</code> method is called before an entity is inserted or updated in the database.</li>
+<li>Demonstrating the use of custom properties that are not persisted in the database: <code>Employee::$profilePicContent</code> is a write-only property that stores the base64-encoded profile pic image string and is not a doctrine-mapped property.</li>
+<li>Demonstrating how you can handle file uploads in modern applications with just Doctrine itself, without using http file uploading technology: when <code>Employee::saveProfilePic()</code> method is called, it reads <code>Employee::$profilePicContent</code>, decodes the base64 string, saves it in a file and sets the <code>Employee::$profilePic</code> to the newly created file path.</li>
+<li>Demonstrating how you can control the JSON API with JMS Serializer: Since <code>Employee::$oldProfilePic</code> is an internal property, it is excluded from the serialized results.</li>
+<li>Demonstrating validations with Symfony validation constraints:: <code>Employee::$firstName</code> is required, <code>Employee::$website</code> should be a url.</li>
+<li>Demonstrating server side custom validation errors: <code>Employee::$firstName</code> cannot be equal to "lorem" or "ipsum"</li>
+</ul>
+<h3>Server Variations</h3>
+<p>There are three varieties of the same application to prove the fact that <code>breeze.server.php</code> is a framework agnostic library.</p>
+<h4>1. standalone</h4>
+<ul>
+<li>Doctrine with XML mappings, Serializer with XML mappings and Validator with XML Mappings</li>
+<li>Demonstrating the usage of <code>StandaloneApplication</code> class from the framework</li>
+<li>No other dependencies!</li>
+<li>You can run <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/tools.html" title="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/tools.html">doctrine commands</a> by typing <code>$ php vendor/bin/doctrine</code> in a terminal from the path where <code>index.php</code> lives.</li>
+</ul>
+<h4>2. Symfony</h4>
+<ul>
+<li>All mappings in YAML format.</li>
+<li>Demonstrating the usage of <code>Application</code> class from the framework</li>
+<li>Demonstrating how to make the <code>Application</code> class as a service, leveraging the existing <code>doctrine.orm.entity_manager</code>, <code>jms_serializer</code> and <code>validator</code> services.</li>
+<li>Demonstrating how you can use routing and the current request object without creating a new one</li>
+<li>You can list doctrine commands by typing <code>$ php app/console list doctrine</code></li>
+<li><a href="http://symfony.com/doc/current/book/doctrine.html" title="http://symfony.com/doc/current/book/doctrine.html">Learn more</a> about symfony specific doctrine stuff.</li>
+</ul>
+<h4>3. laravel</h4>
+<ul>
+<li>All mappings in Annotations format.</li>
+<li>Demonstrating how you can use database configuration from <code>config/database.php</code> file.</li>
+<li>Demonstrating how you can use routing and the current request object without creating a new one</li>
+<li>You can run <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/tools.html" title="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/tools.html">doctrine commands</a> by typing <code>$ php vendor/bin/doctrine</code> from the same path where you run <code>artisan</code> commands.</li>
+</ul>
+<h2>Installation</h2>
+<h3>Server</h3>
+<ul>
+<li>Place this folder (<code>EmpDirectory</code>) into a web accessible folder. If you are using XAMPP, <code>htdocs</code> should be the web root.</li>
+<li>run <code>composer update</code> from <code>server/standalone</code> directory. If you are interested in the <code>server/symfony</code> or <code>server/laravel</code> implementations, do accordingly.</li>
+</ul>
+<h3>Database</h3>
+<ul>
+<li>A MySql dump is available in <code>server/mysql-dump.sql</code> file.</li>
+<li>Create a database, import the dump file and, change the database configuration in:  <ul>
+<li>standalone - <code>bootstrap.php</code>  </li>
+<li>symfony - app/config/parameters.yml  </li>
+<li>laravel - app/config/database.php</li>
+</ul>
+</li>
+</ul>
+<h3>Client</h3>
+<ul>
+<li>the client application uses <a href="http://bower.io/" title="http://bower.io/">bower</a> to manage client side dependencies. run <code>bower install</code> from <code>client</code> directory to install the dependencies.</li>
+<li>if you want the client to work with <code>server/symfony</code> or <code>server/laravel</code> change the serviceName in <code>client/dataservice.js</code> to the corresponding server location.</li>
+</ul>
+<h3>Running the application</h3>
+<ul>
+<li>Open <code>http://localhost/EmpDirectory/client</code> to view the application</li>
+</ul>
+</body>
+</html>

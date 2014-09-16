@@ -1,5 +1,8 @@
 # <img alt="" src="client/images/logo.png" style="height: 50px; margin-top: -10px;"> **EmpDirectory** sample application
 
+
+## <a href="client/" class="btn btn-primary btn-lg">LIVE DEMO</a>
+
 ## Introduction
 
 EmpDirectory is a sample application for demonstrating the usage of [Breeze JS](http://www.breezejs.com) library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.
