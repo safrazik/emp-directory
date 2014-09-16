@@ -2,8 +2,8 @@ define(['knockout', 'q', 'breeze', 'models'], function(ko, Q, breeze, models) {
 
   var serviceName;
   serviceName = '../server/standalone/index.php'; // using standalone server
-  serviceName = '../server/symfony/web/app_dev.php/api'; // using symfony server
-  serviceName = '../server/laravel/public/index.php/api'; // using laravel server
+//  serviceName = '../server/symfony/web/app_dev.php/api'; // using symfony server
+//  serviceName = '../server/laravel/public/index.php/api'; // using laravel server
 
   var entityManager = new breeze.EntityManager(serviceName);
 
