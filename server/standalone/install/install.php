@@ -96,8 +96,11 @@ foreach($employeesData as $employeeName => $employeeData){
 }
 
 try {
+    $em->createQuery('DELETE FROM EmpDirectory\Model\Employee')->execute();
+    $em->createQuery('DELETE FROM EmpDirectory\Model\Department')->execute();
+    $em->createQuery('DELETE FROM EmpDirectory\Model\Job')->execute();
     $em->flush();
-    "SUCCESSFULLY INSTALLED";
+    echo "SUCCESSFULLY INSTALLED\n";
 }
 catch(\Exception $e){
     echo "ERROR OCCURED";
