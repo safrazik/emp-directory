@@ -611,16 +611,29 @@ fg: #00ffff
 
 .header {
   background: #006556;
+  border-color: #006556;
 }
 
-.btn-nav-icon, .nav-back-btn {
-  color: #EEE;
-}
-
+.btn-nav-icon, .nav-back-btn,
 .btn-nav-icon:hover, .nav-back-btn:hover {
   color: #FFF;
+  opacity: 0.85;
 }
 
 .nav-back-btn .fa {
   background: transparent;
+}
+
+.btn-nav-icon:hover, .nav-back-btn:hover {
+  opacity: 1.0;
+}
+
+.main-search-form .form-control {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.main-search-form .form-control:focus {
+  border-color: #006556;
+  background: #FFF;
 }
