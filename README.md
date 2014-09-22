@@ -1,12 +1,12 @@
 ![LOGO](client/images/logo-small.png)
 
-# **EmpDirectory** sample application
+# **Employee Directory** sample application
 
 ## [LIVE DEMO](http://emp-directory.herokuapp.com/client/)
 
 ## Introduction
 
-EmpDirectory is a sample application for demonstrating the usage of [Breeze JS](http://www.breezejs.com) library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.
+Employee Directory is a sample application for demonstrating the usage of [Breeze JS](http://www.breezejs.com) library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.
 
 Inspired by the sample applications of [Christophe Coenraets](http://coenraets.org/blog/).
 
@@ -14,7 +14,7 @@ The application is an Employee Directory that allows you to look for employees b
 
 Additionally, the application also features a CRUD implementation to add,edit and delete employees, departments or job titles.
 
-## EmpDirectory Client
+## Employee Directory Client
 
 ### Features
 
@@ -34,7 +34,7 @@ Additionally, the application also features a CRUD implementation to add,edit an
 - `getXXX` methods of dataservice are synchronous and return the result(s) while `findXXX` methods are asynchronous and return a promise of result(s)
 - view and viewmodel (of a durandal module) are grouped by the name of the module and named as the names of the module itself
 
-## EmpDirectory server
+## Employee Directory server
 
 The server implementation uses [breeze.server.php](https://github.com/adrotec/breeze.server.php), a library to create breeze compatible servers in PHP with Doctrine 2 ORM.
 
@@ -81,7 +81,7 @@ There are three varieties of the same application to prove the fact that `breeze
 
 ### Server
 
-- Place this folder (`EmpDirectory`) into a web accessible folder. If you are using XAMPP, `htdocs` should be the web root.
+- Place this folder (`Employee Directory`) into a web accessible folder. If you are using XAMPP, `htdocs` should be the web root.
 - run `composer update` from `server/standalone` directory. If you are interested in the `server/symfony` or `server/laravel` implementations, do accordingly.
 
 ### Database
@@ -99,4 +99,4 @@ There are three varieties of the same application to prove the fact that `breeze
 
 ### Running the application
 
-- Open `http://localhost/EmpDirectory/client` to view the application
+- Open `http://localhost/Employee Directory/client` to view the application
