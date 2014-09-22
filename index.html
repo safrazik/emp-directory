@@ -4,16 +4,19 @@
   <link rel="stylesheet" href="client/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body class="container">
+<body class="container" style="padding-top: 30px; padding-bottom: 50px;">
 
-<img src="client/images/logo-small.png">
-
-<h1><strong>EmpDirectory</strong> sample application</h1>
+<img src="client/images/logo-small.png" style="float: left; margin-right: 15px;">
   
-<h2><a class="btn btn-primary btn-lg" href="client/">RUN THE APPLICATION</a></h2>
+<h1 style="height: 100px;"><strong>Employee Directory</strong> sample application</h1>
+  
+<h2>
+  <a class="btn btn-primary btn-lg" href="client/">RUN THE APPLICATION</a>
+  <a target="_blank" class="btn btn-default btn-lg" href="https://github.com/adrotec/emp-directory">VIEW THE SOURCE CODE</a>
+</h2>
   
 <h2>Introduction</h2>
-<p>EmpDirectory is a sample application for demonstrating the usage of <a href="http://www.breezejs.com" title="http://www.breezejs.com">Breeze JS</a> library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.</p>
+<p>Employee Directory is a sample application for demonstrating the usage of <a href="http://www.breezejs.com" title="http://www.breezejs.com">Breeze JS</a> library. This sample tries to show the features of breezejs as many as possible while keeping the data model as simple as possible.</p>
 <p>Inspired by the sample applications of <a href="http://coenraets.org/blog/">Christophe Coenraets</a></p>
 <p>
 The application is an Employee Directory that allows you to look for employees by name, view the details of an employee, and navigate up and down the Organization Chart by clicking the employee's manager or any of his/her direct reports.
@@ -21,7 +24,7 @@ The application is an Employee Directory that allows you to look for employees b
 <p>
 Additionally, the application also features a CRUD implementation to add,edit and delete employees, departments or job titles.  
 </p>
-<h2>EmpDirectory Client</h2>
+<h2>Employee Directory Client</h2>
 <h3>Features</h3>
 <ul>
 <li>Handling navigation properties (associations) auto<strong>magic</strong>ally<ul>
@@ -42,7 +45,7 @@ Additionally, the application also features a CRUD implementation to add,edit an
 <li><code>getXXX</code> methods of dataservice are synchronous and return the result(s) while <code>findXXX</code> methods are asynchronous and return a promise of result(s)</li>
 <li>view and viewmodel (of a durandal module) are grouped by the name of the module and named as the names of the module itself</li>
 </ul>
-<h2>EmpDirectory server</h2>
+<h2>Employee Directory server</h2>
 <p>The server implementation uses <a href="https://github.com/adrotec/breeze.server.php" title="https://github.com/adrotec/breeze.server.php">breeze.server.php</a>, a library to create breeze compatible servers in PHP with Doctrine 2 ORM.</p>
   
 
@@ -86,7 +89,7 @@ Additionally, the application also features a CRUD implementation to add,edit an
 <h2>Installation</h2>
 <h3>Server</h3>
 <ul>
-<li>Place this folder (<code>EmpDirectory</code>) into a web accessible folder. If you are using XAMPP, <code>htdocs</code> should be the web root.</li>
+<li>Place this folder (<code>Employee Directory</code>) into a web accessible folder. If you are using XAMPP, <code>htdocs</code> should be the web root.</li>
 <li>run <code>composer update</code> from <code>server/standalone</code> directory. If you are interested in the <code>server/symfony</code> or <code>server/laravel</code> implementations, do accordingly.</li>
 </ul>
 <h3>Database</h3>
@@ -106,7 +109,7 @@ Additionally, the application also features a CRUD implementation to add,edit an
 </ul>
 <h3>Running the application</h3>
 <ul>
-<li>Open <code>http://localhost/EmpDirectory/client</code> to view the application</li>
+<li>Open <code>http://localhost/Employee Directory/client</code> to view the application</li>
 </ul>
   
 <script>
