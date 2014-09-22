@@ -8,6 +8,10 @@
           <!--<img src="images/arrow-left.png">-->
         </button>
         
+        <a title="Home" class="btn-nav-icon" href="#">
+          <img src="images/logo-small.png" style="height: 30px;">
+        </a>
+        
         <span data-bind="foreach: router.navigationModel">
           <a class="btn-nav-icon" data-bind="attr: { href: hash, title: title }, css: { active: isActive }">
             <i class="fa" data-bind="attr: {'class': 'fa fa-' + icon}"></i>

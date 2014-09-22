@@ -33,6 +33,10 @@ section {
     padding: 20px;
 }
 
+.content .content {
+  padding: 0;
+}
+
 .col-center, .col-left, .col-right {
     /* min-height: 300px; */
 }
@@ -596,4 +600,27 @@ body {
 
 .Detached .entityState {
     background-color: gray;
+}
+
+/* theme 
+
+bg: #006556
+fg: #00ffff
+
+*/
+
+.header {
+  background: #006556;
+}
+
+.btn-nav-icon, .nav-back-btn {
+  color: #EEE;
+}
+
+.btn-nav-icon:hover, .nav-back-btn:hover {
+  color: #FFF;
+}
+
+.nav-back-btn .fa {
+  background: transparent;
 }
