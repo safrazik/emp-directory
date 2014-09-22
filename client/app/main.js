@@ -45,7 +45,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'bootstrap', 
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = 'Breeze Employee Directory';
 
     app.configurePlugins({
         router:true,
