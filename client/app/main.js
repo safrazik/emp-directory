@@ -1,23 +1,29 @@
 // for development purpose
-require.config({
-    urlArgs: "bust=" + (new Date()).getTime()
-});
+//require.config({
+//    urlArgs: "bust=" + (new Date()).getTime()
+//});
 
 var lib = '../bower_components/';
 
 requirejs.config({
+  // uncomment the path to the debug version of a library during development
     paths: {
         'text': lib + 'requirejs-text/text',
         'durandal':lib + 'durandal/js',
         'plugins' : lib + 'durandal/js/plugins',
         'transitions' : lib + 'durandal/js/transitions',
-        'knockout': lib + 'knockout.js/knockout.debug',
-        'bootstrap': lib + 'bootstrap/dist/js/bootstrap',
+//        'knockout': lib + 'knockout.js/knockout.debug',
+        'knockout': lib + 'knockout.js/knockout',
+//        'bootstrap': lib + 'bootstrap/dist/js/bootstrap',
+        'bootstrap': lib + 'bootstrap/dist/js/bootstrap.min',
         'jquery': lib + 'jquery/jquery',
         'q': lib + 'q/q',
-        'breeze': lib + 'breezejs/breeze.debug',
-        'toastr': lib + 'toastr/toastr',
-        'moment': lib + 'moment/moment',
+//        'breeze': lib + 'breezejs/breeze.debug',
+        'breeze': lib + 'breezejs/breeze.min',
+//        'toastr': lib + 'toastr/toastr',
+        'toastr': lib + 'toastr/toastr.min',
+//        'moment': lib + 'moment/moment',
+        'moment': lib + 'moment/min/moment.min',
         'dateBindings': lib + 'knockout-date-bindings/knockout-date-bindings',
         'fileBindings': lib + 'knockout-file-bindings/knockout-file-bindings',
         'fastclick': lib + 'fastclick/lib/fastclick',
