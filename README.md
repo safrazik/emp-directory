@@ -1,3 +1,7 @@
+# Project Status:  🚨 Unmaintained 🚨
+
+This project is no longer maintained. We will not be accepting pull requests, addressing issues, nor making future releases.
+
 ![LOGO](client/images/logo-small.png)
 
 # **Employee Directory** sample application
